@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CaracteristiquesController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="81.0" prefWidth="400.0" style="-fx-background-color: #ffab00;" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="TOP" prefHeight="95.0" prefWidth="70.0" text="Produit">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="74.0">
+                     <image>
+                        <Image url="@product.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Cambria Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Code Produit" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label fx:id="code" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Nom Poduit">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="nom" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Prix Vente">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="prixVente" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Prix Achat">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Label fx:id="prixAchat" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Quantité">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label fx:id="qte" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Description">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Label fx:id="description" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Nom Fournisseur">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <Label fx:id="fouenisseur" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Date Insertion">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <Label fx:id="date" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Catégorie">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="140.0" text="Acitf">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <children>
+                  <Label fx:id="actif" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <children>
+                  <Label fx:id="categorie" alignment="CENTER" prefHeight="31.0" prefWidth="167.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="197.0" text="Date de Péremption">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Label fx:id="datePerem" alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="187.0" text="Label">
+                     <font>
+                        <Font name="Cambria Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="13.0" prefWidth="400.0" style="-fx-background-color: #282a30;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

@@ -1,0 +1,8 @@
+.jfx-border-pane .border-center-background {
+	-fx-background-color: #ffa000;
+}
+
+.jfx-hbox {
+	-fx-background-color: #ff8f00;
+	-fx-border-radius:5.0;
+}

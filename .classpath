@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48.jar"/>
+	<classpathentry kind="lib" path="D:/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar"/>
+	<classpathentry kind="lib" path="D:/GI 3/SceneBuilder-8.4.1_2/jfoenix-8.0.7.jar"/>
+	<classpathentry kind="lib" path="D:/GI 3/SceneBuilder-8.4.1_2/jfoenix-8.0.7-retrolambda.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/fontawesomefx-8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/com.lowagie.text-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/commons-collections-3.2.1-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/itextpdf-5.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/public.DESKTOP-D54OFB2/Downloads/Telegram Desktop/Fichiers_Facture/Fichiers_Facture/LibrariesForJasper/jasperreports-6.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

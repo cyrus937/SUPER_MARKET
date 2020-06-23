@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StatistiquesController">
+   <top>
+      <HBox prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #ffab00;">
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="75.0">
+                     <image>
+                        <Image url="@../image/magasinerIcon.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="56.0" prefWidth="148.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="28.0" prefWidth="154.0" text="Administrateur">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="label" alignment="TOP_CENTER" prefHeight="28.0" prefWidth="153.0" text="Administrateur">
+                                 <font>
+                                    <Font name="Cambria Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="103.0" prefWidth="855.0" style="-fx-background-color: #ffab00;">
+               <children>
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="RIGHT" onAction="#handleCancel" prefHeight="58.0" prefWidth="199.0" text="Déconnexion">
+                     <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="55.0">
+                           <image>
+                              <Image url="@../image/deconnexionImage.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane prefHeight="510.0" prefWidth="900.0">
+         <top>
+            <HBox alignment="TOP_RIGHT" prefHeight="56.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="56.0" prefWidth="389.0" HBox.hgrow="SOMETIMES" />
+                  <HBox prefHeight="56.0" prefWidth="671.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <GridPane prefHeight="56.0" prefWidth="238.0" HBox.hgrow="ALWAYS">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label styleClass="label-header" text="Ventes du jour">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="label-header" text="Ventes de la semaine" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="label-header" text="Ventes du mois" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label styleClass="label-header" text="Ventes de l'année" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="venteJourneeLabel" styleClass="label-bright" text="Label" textFill="#0b85e0" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="venteAnneeLabel" styleClass="label-bright" text="Label" textFill="#0b85e0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="venteSemaineLabel" styleClass="label-bright" text="Label" textFill="#0b85e0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="venteMoisLabel" styleClass="label-bright" text="Label" textFill="#0b85e0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox alignment="CENTER" prefHeight="486.0" prefWidth="571.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="225.0" prefWidth="593.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="289.0" prefWidth="393.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <GridPane prefHeight="289.0" prefWidth="399.0" HBox.hgrow="ALWAYS">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="159.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="139.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="110.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                                             <children>
+                                                <Label styleClass="label-bright" text="Du:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <DatePicker fx:id="dateDebut" prefHeight="25.0" prefWidth="120.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="41.0" prefWidth="169.0" styleClass="label-header" text="Ventes par Categorie &#10;et par Produit" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label styleClass="label-bright" text="Categorie">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                             <children>
+                                                <ComboBox fx:id="categorieBox" prefWidth="170.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label styleClass="label-bright" text="Produit">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                             <children>
+                                                <ComboBox fx:id="produitBox" prefWidth="170.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label styleClass="label-bright" text="Montant des ventes:">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <children>
+                                                <Label styleClass="label-bright" text="Au:">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <DatePicker fx:id="dateFin" prefHeight="25.0" prefWidth="113.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                             <children>
+                                                <JFXButton fx:id="afficheButton" buttonType="RAISED" onAction="#handleMontantVentes" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #ffab00; -fx-background-radius: 2em;" text="Afficher">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                                             <children>
+                                                <Label styleClass="label-bright" text="Periode">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label fx:id="labus" prefHeight="27.0" prefWidth="119.0" styleClass="label-bright" text="Label" textFill="#ff5e00">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="239.0" prefWidth="278.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <PieChart fx:id="circle" prefHeight="289.0" prefWidth="325.0" stylesheets="@New.css" title="Diagramme Circulaire &#10;des ventes par mois :" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="233.0" prefWidth="593.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="278.0" prefWidth="593.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <AreaChart fx:id="barChart" prefHeight="297.0" prefWidth="697.0" stylesheets="@New.css" title="Evolution des ventes de la semaine :" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <VBox prefHeight="236.0" prefWidth="303.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane prefHeight="217.0" prefWidth="303.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="montantVenteLabel1" layoutX="6.0" layoutY="4.0" styleClass="label-header" text="Meilleurs Clients">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="montantVenteLabel3" layoutX="145.0" layoutY="22.0" styleClass="label-bright" text="Mois:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="moisBoxClient" layoutX="186.0" layoutY="15.0" onAction="#meilleurClient" prefHeight="27.0" prefWidth="117.0" />
+                              <JFXTreeTableView fx:id="personTableClient" layoutX="4.0" layoutY="49.0" prefHeight="189.0" prefWidth="303.0" stylesheets="@styleTreeTableview.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="47.0">
+                                 <columns>
+                                    <TreeTableColumn fx:id="nomClientColumn" prefWidth="75.0" text="Nom Client" />
+                                    <TreeTableColumn fx:id="recetteClientColumn" prefWidth="75.0" text="Recette (Fcfa)" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </JFXTreeTableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="269.0" prefWidth="303.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane prefHeight="228.0" prefWidth="303.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="montantVenteLabel2" layoutX="8.0" layoutY="5.0" styleClass="label-header" text="Meilleurs Caissier(e)s">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="montantVenteLabel31" layoutX="146.0" layoutY="27.0" styleClass="label-bright" text="Mois:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="moisBoxCaissiere" layoutX="186.0" layoutY="19.0" onAction="#meilleurCaissiere" prefHeight="27.0" prefWidth="117.0" />
+                              <JFXTreeTableView fx:id="personTableCaissiere" layoutX="4.0" layoutY="53.0" prefHeight="202.0" prefWidth="303.0" stylesheets="@styleTreeTableview.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="51.0">
+                                 <columns>
+                                    <TreeTableColumn fx:id="nomCaissiereColumn" prefWidth="149.0" text="Nom Caissier" />
+                                    <TreeTableColumn fx:id="montantVenduCaissiereColumn" prefWidth="148.0" text="Montant Vendu (Fcfa)" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </JFXTreeTableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+   </center>
+</BorderPane>

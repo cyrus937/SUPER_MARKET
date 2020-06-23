@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AjoutCommandeController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTabPane stylesheets="@globalStyle.css" HBox.hgrow="ALWAYS">
+                     <tabs>
+                        <Tab text="Ajouter une commande">
+                          <content>
+                            <AnchorPane>
+                                 <children>
+                                    <SplitPane dividerPositions="0.4206008583690987" orientation="VERTICAL" prefHeight="471.0" prefWidth="786.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane layoutX="850.0" minHeight="0.0" minWidth="0.0" prefHeight="102.0" prefWidth="898.0">
+                                             <children>
+                                                <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="232.0" prefWidth="900.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                                   <left>
+                                                      <AnchorPane prefHeight="195.0" prefWidth="263.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <JFXTextField fx:id="identifiantClientTextField" layoutX="74.0" layoutY="69.0" prefHeight="41.0" prefWidth="164.0" promptText="Identifiant du client" unFocusColor="#320f57">
+                                                               <font>
+                                                                  <Font name="Arial Narrow Bold Italic" size="15.0" />
+                                                               </font>
+                                                            </JFXTextField>
+                                                            <AnchorPane layoutX="17.0" layoutY="18.0" prefHeight="44.0" prefWidth="39.0" />
+                                                            <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="19.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@icons8-identifiants-utilisateur-64.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </left>
+                                                   <center>
+                                                      <AnchorPane prefHeight="195.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="60.0" prefHeight="39.0" prefWidth="67.0" text="Quantite">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font></Label>
+                                                            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="46.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="40.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons8-créer-un-nouveau-100.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <JFXTextField fx:id="qteTextField" layoutX="81.0" layoutY="54.0" prefHeight="32.0" prefWidth="105.0" />
+                                                            <JFXTextField fx:id="codeProduitTextField" layoutX="81.0" layoutY="12.0" prefHeight="32.0" prefWidth="171.0" promptText="Code du Produit">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="14.0" />
+                                                               </font></JFXTextField>
+                                                            <Label layoutX="14.0" layoutY="110.0" prefHeight="20.0" prefWidth="128.0" text="Quantite en Stock">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font></Label>
+                                                            <Label fx:id="quatiteLabel" layoutX="158.0" layoutY="110.0" prefHeight="17.0" prefWidth="72.0" text="Qte" />
+                                                            <JFXButton fx:id="AnnulerProduit" layoutX="100.0" layoutY="149.0" onAction="#handleCancelProduit" style="-fx-background-color: #ffab00;" text="Annuler" />
+                                                            <JFXButton fx:id="ValiderProduit" layoutX="189.0" layoutY="149.0" onAction="#handleOkProduit" prefHeight="25.0" prefWidth="36.0" style="-fx-background-color: #ffab00;" text="OK" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </center>
+                                                   <right>
+                                                      <AnchorPane prefHeight="195.0" prefWidth="444.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <ImageView fitHeight="81.0" fitWidth="44.0" layoutX="21.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@icons8-commentaires-64.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <JFXTextArea fx:id="commentairestextArea" labelFloat="true" layoutX="67.0" layoutY="5.0" prefHeight="175.0" prefWidth="363.0" promptText="Commentaires" AnchorPane.rightAnchor="5.0">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="16.0" />
+                                                               </font>
+                                                            </JFXTextArea>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </right>
+                                                </BorderPane>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="898.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.8641509433962264" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" stylesheets="@styleTreeTableview.css">
+                                                         <children>
+                                                            <JFXTreeTableView fx:id="treeTableLigneCommande" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <columnResizePolicy>
+                                                                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                               <columns>
+                                                                  <TreeTableColumn fx:id="codeProCommande" prefWidth="75.0" text="Code Produit" />
+                                                                  <TreeTableColumn fx:id="nomProCommande" prefWidth="75.0" text="Nom Produit" />
+                                                                  <TreeTableColumn fx:id="qteCommande" prefWidth="75.0" text="Quantite" />
+                                                               </columns>
+                                                            </JFXTreeTableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <BorderPane layoutY="4.0" prefHeight="196.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+                                                               <right>
+                                                                  <BorderPane prefHeight="44.0" prefWidth="364.0" BorderPane.alignment="CENTER">
+                                                                     <right>
+                                                                        <JFXButton fx:id="ValiderCommande" onAction="#handleOkCommande" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Insérer" BorderPane.alignment="CENTER">
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="12.0" />
+                                                                           </font></JFXButton>
+                                                                     </right>
+                                                                     <center>
+                                                                        <JFXButton fx:id="AnnulerCommande" onAction="#handleCancelCommande" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Annuler" BorderPane.alignment="CENTER">
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="12.0" />
+                                                                           </font></JFXButton>
+                                                                     </center>
+                                                                  </BorderPane>
+                                                               </right>
+                                                               <left>
+                                                                  <JFXButton fx:id="AnnulerCommande1" onAction="#handleCancelProduit" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Supprimer" BorderPane.alignment="CENTER">
+                                                                     <font>
+                                                                        <Font name="System Bold Italic" size="12.0" />
+                                                                     </font></JFXButton>
+                                                               </left></BorderPane>
+                                                         </children></AnchorPane>
+                                                  </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </HBox>
+         </center>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <top>
+            <HBox prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #ffab00;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="74.0" opacity="0.9" preserveRatio="true">
+                           <image>
+                              <Image url="@icons8-nom-64.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="42.0" prefWidth="169.0" text="User name">
+                           <font>
+                              <Font name="Georgia Bold Italic" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="103.0" prefWidth="855.0">
+                     <children>
+                        <JFXButton alignment="CENTER" contentDisplay="RIGHT" prefHeight="63.0" prefWidth="208.0" text="Déconnexion" underline="true">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="96.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons8-flèche-droite-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Georgia Bold Italic" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

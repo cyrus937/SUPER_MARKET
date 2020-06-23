@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="508.0" prefWidth="828.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GestionFactureController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="483.0" prefWidth="848.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox layoutX="240.0" layoutY="78.0" prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="816.0">
+                     <children>
+                        <GridPane alignment="TOP_RIGHT" layoutX="7.0" prefHeight="192.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="230.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="203.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="331.0" minWidth="10.0" prefWidth="249.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="110.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="68.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="codeProduit" focusColor="#ffab00" labelFloat="true" minWidth="-Infinity" onKeyPressed="#handle_codeProduit" prefHeight="25.0" prefWidth="116.0" promptText="CodeProduit" />
+                              <JFXDatePicker fx:id="dateSup" defaultColor="#ffab00" onKeyPressed="#handle_dateSup" prefHeight="25.0" prefWidth="197.0" promptText="Date supérieure" GridPane.columnIndex="2" />
+                              <JFXDatePicker fx:id="dateInf" defaultColor="#ffab00" onKeyPressed="#handle_dateInf" prefHeight="25.0" prefWidth="194.0" promptText="Date inférieure" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="searchFactureTextField" focusColor="#ffab00" promptText="Recherche" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <ImageView fitHeight="31.0" fitWidth="33.0" GridPane.columnIndex="4">
+                                 <image>
+                                    <Image url="@../image/searchImage.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="309.0" prefWidth="828.0">
+                     <children>
+                        <JFXTreeTableView fx:id="tableViewFacture" layoutX="196.0" layoutY="-88.0" onMouseClicked="#handleSelectedItem" prefHeight="312.0" prefWidth="774.0" stylesheets="@styleTreeTableview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TreeTableColumn fx:id="idFacture" prefWidth="75.0" text="idFacture" />
+                              <TreeTableColumn fx:id="dateFacture" prefWidth="75.0" text="dateFacture" />
+                              <TreeTableColumn fx:id="codePaiement" prefWidth="75.0" text="code paiement" />
+                              <TreeTableColumn fx:id="remise" prefWidth="75.0" text="remise" />
+                              <TreeTableColumn fx:id="montant" prefWidth="75.0" text="montant" />
+                              <TreeTableColumn fx:id="modePaiement" prefWidth="75.0" text="mode paiement" />
+                              <TreeTableColumn fx:id="idCaissiere" prefWidth="75.0" text="Caissiere" />
+                              <TreeTableColumn fx:id="idClient" prefWidth="75.0" text="idClient" />
+                              <TreeTableColumn fx:id="idCommande" prefWidth="75.0" text="idCommande" />
+                              <TreeTableColumn fx:id="quantite" prefWidth="75.0" text="Quantité du Produit" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </JFXTreeTableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="105.0" prefWidth="774.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" prefHeight="98.0" prefWidth="774.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="445.0" minWidth="10.0" prefWidth="445.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="10.0" prefWidth="152.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="recette" editable="false" focusColor="#ffab00" labelFloat="true" prefHeight="25.0" prefWidth="326.0" promptText="Recettes" unFocusColor="#ffab00" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font></JFXTextField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

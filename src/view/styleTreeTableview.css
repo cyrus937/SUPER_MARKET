@@ -1,0 +1,20 @@
+
+.jfx-tree-table-view  .column-header .label  {
+    -fx-alignment: center-left; 
+    -fx-font-family: century; 
+    -fx-text-fill:black;
+    -fx-border-color:#ffaa004f
+	transparent
+	transparent;
+    -fx-border-insets: 0 0 0 0; 
+}
+
+.jfx-tree-table-view  .column-header {
+    -fx-background-color:#ffaa004f;
+    -fx-font-family: century; 
+}
+
+.jfx-tree-table-view .tree-table-cell{
+    -fx-font-family:Bookman Old Style;
+}
+

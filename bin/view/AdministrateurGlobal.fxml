@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AdministrateurGlobalController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane cache="true" prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <JFXButton fx:id="caissierButton" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#handleCaissierButton" prefHeight="139.0" prefWidth="135.0" style="-fx-background-color: #ffe082; -fx-background-radius: 60;" text="Caissière" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="82.0" fitWidth="107.0">
+                                 <image>
+                                    <Image url="@refund.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <JFXButton fx:id="magasinierButton" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#handleMagasinierButton" prefHeight="136.0" prefWidth="136.0" style="-fx-background-color: #ffe082; -fx-background-radius: 60;" text="Magasinier" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="85.0" fitWidth="82.0">
+                                 <image>
+                                    <Image url="@warehouse.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <JFXButton fx:id="fournisseurButton" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#handleFournisseurButton" prefHeight="133.0" prefWidth="130.0" style="-fx-background-color: #ffe082; -fx-background-radius: 60;" text="Fournisseur" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="86.0" fitWidth="95.0">
+                                 <image>
+                                    <Image url="@supplier.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <JFXButton fx:id="stockButton" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#handleStockButton" prefHeight="133.0" prefWidth="130.0" style="-fx-background-color: #ffe082; -fx-background-radius: 60;" text="Stock" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@hangar.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <JFXButton fx:id="historyButton" buttonType="RAISED" contentDisplay="TOP" onAction="#handleHistoryButton" prefHeight="133.0" prefWidth="130.0" style="-fx-background-color: #ffe082; -fx-background-radius: 60;" text="Historique" BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="72.0" fitWidth="90.0">
+                                 <image>
+                                    <Image url="@../../../../Desktop/icons8-modifier-le-rapport-de-graphique-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <JFXButton fx:id="statButton" buttonType="RAISED" contentDisplay="TOP" ellipsisString="" onAction="#handleStatButton" style="-fx-background-color: #ffe082; -fx-background-radius: 60;" text="Statistiques" BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="78.0" fitWidth="90.0">
+                                 <image>
+                                    <Image url="@combo-chart.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                           <effect>
+                              <Shadow color="#1f0532" />
+                           </effect>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+               </children>
+            </HBox>
+         </center>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <top>
+            <HBox prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #FD9330;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #ffab00;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="75.0">
+                           <image>
+                              <Image url="@name.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="70.0" prefWidth="151.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="35.0" prefWidth="159.0" text="Administrateur" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="label" alignment="TOP_CENTER" prefHeight="35.0" prefWidth="154.0" text="Administrateur">
+                                       <font>
+                                          <Font name="Cambria Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="103.0" prefWidth="855.0" style="-fx-background-color: #ffab00;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="19.0" prefWidth="131.0" text="Déconnexion">
+                           <font>
+                              <Font name="Cambria Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="deconnexion" alignment="CENTER" contentDisplay="CENTER" onAction="#handleDeconnexionButton" prefHeight="60.0" prefWidth="67.0" style="-fx-background-color: #ffab00;" text=" ">
+                           <graphic>
+                              <ImageView fitHeight="48.0" fitWidth="48.0">
+                                 <image>
+                                    <Image url="@icons8-flèche-droite-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

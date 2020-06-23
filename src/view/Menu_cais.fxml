@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MenuCaisController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTabPane stylesheets="@globalStyle.css" HBox.hgrow="ALWAYS">
+                     <tabs>
+                        <Tab text="Facture">
+                          <content>
+                            <AnchorPane style="-fx-background-color: white;">
+                                 <children>
+                                    <SplitPane dividerPositions="0.4206008583690987" orientation="VERTICAL" prefHeight="471.0" prefWidth="786.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane layoutX="850.0" minHeight="0.0" minWidth="0.0" prefHeight="102.0" prefWidth="898.0">
+                                             <children>
+                                                <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="232.0" prefWidth="900.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                                   <left>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <JFXTextField fx:id="idClientTextfield" layoutX="64.0" layoutY="17.0" prefHeight="41.0" prefWidth="164.0" promptText="Identifiant du client" unFocusColor="#320f57">
+                                                               <font>
+                                                                  <Font name="Arial Narrow Bold Italic" size="15.0" />
+                                                               </font>
+                                                            </JFXTextField>
+                                                            <AnchorPane layoutX="17.0" layoutY="18.0" prefHeight="44.0" prefWidth="39.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons8-identifiants-utilisateur-64.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <JFXTextField layoutX="67.0" layoutY="78.0" prefHeight="40.0" prefWidth="159.0" promptText="Remise en %">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="14.0" />
+                                                               </font></JFXTextField>
+                                                            <Label layoutX="6.0" layoutY="140.0" prefHeight="47.0" prefWidth="126.0" text="Mode de Paiement">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font></Label>
+                                                            <ImageView fitHeight="44.0" fitWidth="58.0" layoutX="14.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@icons8-remise-100.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <JFXComboBox fx:id="modeComboBox" layoutX="135.0" layoutY="142.0" prefHeight="25.0" prefWidth="129.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </left>
+                                                   <center>
+                                                      <AnchorPane prefHeight="203.0" prefWidth="345.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="60.0" prefHeight="39.0" prefWidth="67.0" text="Quantite">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font></Label>
+                                                            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="46.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="40.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons8-créer-un-nouveau-100.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <JFXTextField fx:id="qteProTextfield" layoutX="81.0" layoutY="54.0" prefHeight="32.0" prefWidth="105.0" />
+                                                            <JFXTextField fx:id="codeProTextfield" layoutX="81.0" layoutY="12.0" prefHeight="32.0" prefWidth="171.0" promptText="Code du Produit">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="14.0" />
+                                                               </font></JFXTextField>
+                                                            <Label layoutX="14.0" layoutY="110.0" prefHeight="20.0" prefWidth="128.0" text="Quantite en Stock">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font></Label>
+                                                            <Label fx:id="qteStockLabel" layoutX="158.0" layoutY="110.0" prefHeight="17.0" prefWidth="72.0" text="ND" textFill="#e10e0e">
+                                                               <font>
+                                                                  <Font name="System Bold" size="15.0" />
+                                                               </font></Label>
+                                                            <JFXButton fx:id="AnnulerProduit" layoutX="122.0" layoutY="150.0" onAction="#handleCancelProduit" style="-fx-background-color: #ffab00;" text="Annuler">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="ValiderProduit" disable="true" layoutX="206.0" layoutY="150.0" onAction="#handleOkProduit" style="-fx-background-color: #ffab00;" text="OK">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="PlusUnProduit" contentDisplay="CENTER" disable="true" layoutX="191.0" layoutY="67.0" onAction="#handlePlusUnQte" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #ffab00;" text=" ">
+                                                               <graphic>
+                                                                  <FontAwesomeIcon glyphName="PLUS" />
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <JFXButton fx:id="MoinsUnProduit" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="221.0" layoutY="67.0" onAction="#handleMoinsUnQte" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #ffab00; -fx-border-width: 0px 0px 0px 2px; -fx-border-color: black;" text=" ">
+                                                               <graphic>
+                                                                  <FontAwesomeIcon glyphName="MINUS" />
+                                                               </graphic>
+                                                            </JFXButton>
+                                                            <Label layoutX="348.0" layoutY="24.0" text="Nom du produit :">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="348.0" layoutY="82.0" text="Prix du produit :">
+                                                               <font>
+                                                                  <Font name="System Bold" size="14.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="prixProLabel" layoutX="533.0" layoutY="82.0" text="ND" textFill="#ee1313">
+                                                               <font>
+                                                                  <Font name="System Bold" size="15.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="nomProLabel" layoutX="533.0" layoutY="24.0" text="ND" textFill="#e81111">
+                                                               <font>
+                                                                  <Font name="System Bold" size="15.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </center>
+                                                   <right>
+                                                      <AnchorPane prefHeight="203.0" prefWidth="261.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="7.0" prefHeight="57.0" prefWidth="99.0" text="TOTAL (FCFA)" textFill="#2f2452">
+                                                               <font>
+                                                                  <Font name="Gill Sans Ultra Bold Condensed" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <JFXTextField fx:id="regleTextField" layoutX="171.0" layoutY="113.0" prefHeight="24.0" prefWidth="119.0" />
+                                                            <Label layoutX="9.0" layoutY="56.0" prefHeight="47.0" prefWidth="161.0" text="NET A PAYER (FCFA)" textFill="#2f2452">
+                                                               <font>
+                                                                  <Font name="Gill Sans Ultra Bold Condensed" size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="14.0" layoutY="105.0" prefHeight="41.0" prefWidth="78.0" text="Réglé" textFill="#2f2452">
+                                                               <font>
+                                                                  <Font name="Gill Sans Ultra Bold Condensed" size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="14.0" layoutY="155.0" prefHeight="24.0" prefWidth="63.0" text="Rendu" textFill="#2f2452">
+                                                               <font>
+                                                                  <Font name="Gill Sans Ultra Bold Condensed" size="19.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="total_label" alignment="CENTER" contentDisplay="CENTER" layoutX="171.0" layoutY="27.0" prefHeight="17.0" prefWidth="125.0" text="ND" textAlignment="CENTER" textFill="#f20f0f">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font></Label>
+                                                            <Label fx:id="netAPayer_label" alignment="CENTER" layoutX="193.0" layoutY="71.0" prefWidth="81.0" text="ND" textFill="#ee0808">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font></Label>
+                                                            <Label fx:id="rendu_label" alignment="CENTER" layoutX="194.0" layoutY="159.0" prefHeight="17.0" prefWidth="72.0" text="ND" textFill="#da0303">
+                                                               <font>
+                                                                  <Font name="System Bold" size="13.0" />
+                                                               </font></Label>
+                                                         </children></AnchorPane>
+                                                   </right>
+                                                </BorderPane>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="898.0">
+                                             <children>
+                                                <SplitPane dividerPositions="0.8641509433962264" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <JFXTreeTableView fx:id="treeTableLigneFacture" stylesheets="@styleTreeTableview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <columns>
+                                                                  <TreeTableColumn fx:id="codePro" prefWidth="75.0" text="Code Produit" />
+                                                                  <TreeTableColumn fx:id="nomPro" prefWidth="75.0" text="Nom Produit" />
+                                                                  <TreeTableColumn fx:id="prixPro" prefWidth="75.0" text="Prix Unitaire" />
+                                                                  <TreeTableColumn fx:id="qtePro" prefWidth="75.0" text="Quantite" />
+                                                                  <TreeTableColumn fx:id="sousTotal" prefWidth="75.0" text="Sous Total" />
+                                                               </columns>
+                                                               <columnResizePolicy>
+                                                                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                            </JFXTreeTableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
+                                                         <children>
+                                                            <BorderPane layoutY="4.0" prefHeight="196.0" prefWidth="217.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="4.0">
+                                                               <right>
+                                                                  <BorderPane prefHeight="44.0" prefWidth="364.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                                                     <right>
+                                                                        <JFXButton fx:id="ValiderFacture" disable="true" onAction="#handleOkFacture" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Valider" BorderPane.alignment="CENTER">
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="12.0" />
+                                                                           </font></JFXButton>
+                                                                     </right>
+                                                                     <center>
+                                                                        <JFXButton fx:id="AnnulerFaccture" onAction="#handleCancelFacture" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Annuler" BorderPane.alignment="CENTER">
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="12.0" />
+                                                                           </font></JFXButton>
+                                                                     </center>
+                                                                     <left>
+                                                                        <JFXButton fx:id="AppercuFacture" onAction="#handleSeeFacture" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Aperçu" BorderPane.alignment="CENTER">
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="12.0" />
+                                                                           </font>
+                                                                        </JFXButton>
+                                                                     </left>
+                                                                  </BorderPane>
+                                                               </right>
+                                                               <left>
+                                                                  <JFXButton fx:id="SupprimerLigneFacture" disable="true" onAction="#handleSupprimerLigneFacture" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #ffab00; -fx-background-radius: 1em;" text="Supprimer" BorderPane.alignment="CENTER">
+                                                                     <font>
+                                                                        <Font name="System Bold Italic" size="12.0" />
+                                                                     </font></JFXButton>
+                                                               </left></BorderPane>
+                                                         </children></AnchorPane>
+                                                  </items>
+                                                </SplitPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Catégorie">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="900.0">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <left>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                       <right>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXTextField fx:id="rechercheCategorieTextfield" labelFloat="true" layoutX="22.0" layoutY="36.0" prefHeight="34.0" prefWidth="117.0" promptText="Rechercher">
+                                                   <font>
+                                                      <Font name="Bell MT Italic" size="18.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                                <AnchorPane layoutX="141.0" layoutY="36.0" prefHeight="40.0" prefWidth="50.0">
+                                                   <children>
+                                                      <ImageView fitHeight="41.0" fitWidth="58.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@icons8-chercher-48.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </right>
+                                       <bottom>
+                                          <AnchorPane prefHeight="21.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                       <center>
+                                          <JFXTreeTableView fx:id="treeTableCategorie" prefHeight="463.0" prefWidth="500.0" stylesheets="@styleTreeTableview.css" BorderPane.alignment="CENTER">
+                                             <columns>
+                                                <TreeTableColumn fx:id="identifiantCategorie" prefWidth="75.0" text="Code Catégorie" />
+                                                <TreeTableColumn fx:id="nomCategorie" prefWidth="75.0" text="Nom Catégorie" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                       </center>
+                                       <top>
+                                          <HBox prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+                                       </top>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Produit">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <top>
+                                          <AnchorPane prefHeight="59.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <JFXTextField fx:id="rechercheProduitTextfield" labelFloat="true" layoutX="547.0" layoutY="12.0" prefHeight="32.0" prefWidth="170.0" promptText="Rechercher">
+                                                   <font>
+                                                      <Font name="Bell MT Italic" size="16.0" />
+                                                   </font>
+                                                </JFXTextField>
+                                                <AnchorPane layoutX="719.0" layoutY="8.0" prefHeight="43.0" prefWidth="35.0">
+                                                   <children>
+                                                      <ImageView fitHeight="49.0" fitWidth="36.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@icons8-chercher-48.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children></AnchorPane>
+                                       </top>
+                                       <bottom>
+                                          <AnchorPane prefHeight="17.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                       <left>
+                                          <AnchorPane prefHeight="382.0" prefWidth="130.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                       <right>
+                                          <AnchorPane prefHeight="382.0" prefWidth="131.0" BorderPane.alignment="CENTER" />
+                                       </right>
+                                       <center>
+                                          <JFXTreeTableView fx:id="tableProduit" stylesheets="@styleTreeTableview.css" BorderPane.alignment="CENTER">
+                                             <columns>
+                                                <TreeTableColumn fx:id="identifiantProduit" prefWidth="75.0" text="Code Produit" />
+                                                <TreeTableColumn fx:id="nomProduit" prefWidth="75.0" text="Nom Produit" />
+                                                <TreeTableColumn fx:id="prixVenteProduit" prefWidth="75.0" text="Prix Vente" />
+                                                <TreeTableColumn fx:id="qteProduit" prefWidth="75.0" text="Quantite" />
+                                                <TreeTableColumn fx:id="categorieProduit" prefWidth="75.0" text="Categorie" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                       </center>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Commande">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <top>
+                                          <AnchorPane prefHeight="63.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <left>
+                                                      <AnchorPane prefHeight="63.0" prefWidth="368.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <Label layoutX="60.0" layoutY="23.0" prefHeight="23.0" prefWidth="226.0" text="Ajouter une commande" textFill="#2f2452">
+                                                               <font>
+                                                                  <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <JFXButton fx:id="AjouterCommande" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="282.0" layoutY="10.0" onAction="#handleAddCommande" prefHeight="42.0" prefWidth="41.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="285.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="15.0">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="26.0" fitWidth="25.0">
+                                                                     <image>
+                                                                        <Image url="@icons8-plus-16.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic></JFXButton>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </left>
+                                                   <right>
+                                                      <AnchorPane prefHeight="64.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <JFXTextField fx:id="rechercheCommandeTextfield" labelFloat="true" layoutX="35.0" layoutY="20.0" prefHeight="25.0" prefWidth="147.0" promptText="Rechercher">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="15.0" />
+                                                               </font>
+                                                            </JFXTextField>
+                                                            <AnchorPane layoutX="185.0" layoutY="14.0" prefHeight="43.0" prefWidth="31.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="41.0" fitWidth="34.0" layoutX="-3.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons8-chercher-48.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </right>
+                                                </BorderPane>
+                                             </children></AnchorPane>
+                                       </top>
+                                       <left>
+                                          <AnchorPane prefHeight="351.0" prefWidth="160.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                       <right>
+                                          <AnchorPane prefHeight="351.0" prefWidth="160.0" BorderPane.alignment="CENTER" />
+                                       </right>
+                                       <bottom>
+                                          <AnchorPane prefHeight="54.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <right>
+                                                      <AnchorPane prefHeight="54.0" prefWidth="445.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <JFXButton fx:id="AnnulerCommande" layoutX="141.0" layoutY="15.0" onAction="#handleCancelCommande" style="-fx-background-radius: 1em; -fx-background-color: #ffab00;" text="Annuler">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="12.0" />
+                                                               </font></JFXButton>
+                                                            <JFXButton fx:id="ValiderCommande" layoutX="258.0" layoutY="15.0" onAction="#handleOkCommande" style="-fx-background-radius: 1em; -fx-background-color: #ffab00;" text="Valider">
+                                                               <font>
+                                                                  <Font name="System Bold Italic" size="12.0" />
+                                                               </font></JFXButton>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </right>
+                                                </BorderPane>
+                                             </children></AnchorPane>
+                                       </bottom>
+                                       <center>
+                                          <JFXTreeTableView fx:id="treeTableCommande" stylesheets="@styleTreeTableview.css" BorderPane.alignment="CENTER">
+                                             <columns>
+                                                <TreeTableColumn fx:id="idClient" prefWidth="75.0" text="Code Client" />
+                                                <TreeTableColumn fx:id="nomCli" prefWidth="75.0" text="Nom Client" />
+                                                <TreeTableColumn fx:id="commentaires" prefWidth="75.0" text="Commentaires" />
+                                                <TreeTableColumn fx:id="dateCommande" prefWidth="75.0" text="Date" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                       </center>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Client">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <left>
+                                          <AnchorPane prefHeight="359.0" prefWidth="121.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                       <top>
+                                          <AnchorPane prefHeight="68.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <BorderPane prefHeight="55.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <left>
+                                                      <AnchorPane prefHeight="68.0" prefWidth="276.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <Label layoutX="38.0" layoutY="26.0" prefHeight="17.0" prefWidth="145.0" text="Ajouter un client" textFill="#2f2452">
+                                                               <font>
+                                                                  <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+                                                               </font></Label>
+                                                            <JFXButton fx:id="AjouterClient" layoutX="187.0" layoutY="22.0" onAction="#handleAddClient" prefHeight="40.0" prefWidth="53.0" text="  " AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="20.0" />
+                                                            <ImageView fitHeight="35.0" fitWidth="49.0" layoutX="188.0" layoutY="20.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="20.0">
+                                                               <image>
+                                                                  <Image url="@icons8-plus-16.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </left>
+                                                   <right>
+                                                      <AnchorPane prefHeight="68.0" prefWidth="381.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <JFXTextField fx:id="rechercheClientTextfield" labelFloat="true" layoutX="14.0" layoutY="22.0" prefHeight="32.0" prefWidth="164.0" promptText="Rechercher">
+                                                               <font>
+                                                                  <Font name="Bell MT Italic" size="16.0" />
+                                                               </font>
+                                                            </JFXTextField>
+                                                            <AnchorPane layoutX="187.0" layoutY="17.0" prefHeight="34.0" prefWidth="65.0">
+                                                               <children>
+                                                                  <ImageView fitHeight="41.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons8-chercher-48.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </right>
+                                                </BorderPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </top>
+                                       <right>
+                                          <AnchorPane prefHeight="359.0" prefWidth="121.0" BorderPane.alignment="CENTER" />
+                                       </right>
+                                       <bottom>
+                                          <AnchorPane prefHeight="16.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                       <center>
+                                          <JFXTreeTableView fx:id="treeTableClient" stylesheets="@styleTreeTableview.css" BorderPane.alignment="CENTER">
+                                             <columns>
+                                                <TreeTableColumn fx:id="identifiantClient" prefWidth="75.0" text="Code Client" />
+                                                <TreeTableColumn fx:id="nomClient" prefWidth="75.0" text="NomClient" />
+                                                <TreeTableColumn fx:id="numeroClient" prefWidth="75.0" text="Numero" />
+                                                <TreeTableColumn fx:id="adresseClient" prefWidth="75.0" text="Adresse" />
+                                                <TreeTableColumn fx:id="bonusClient" prefWidth="75.0" text="Bonus" />
+                                                <TreeTableColumn fx:id="actifClient" prefWidth="75.0" text="Actif" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                       </center>
+                                    </BorderPane>
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="Gestion Facture">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="468.0" prefWidth="900.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="483.0" prefWidth="848.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <VBox layoutX="240.0" layoutY="78.0" prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <AnchorPane prefHeight="200.0" prefWidth="816.0">
+                                                         <children>
+                                                            <GridPane alignment="TOP_RIGHT" layoutX="7.0" prefHeight="192.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="230.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="203.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="331.0" minWidth="10.0" prefWidth="249.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="110.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="68.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <JFXTextField fx:id="codeProduit" focusColor="#ffab00" labelFloat="true" minWidth="-Infinity" onKeyPressed="#handle_codeProduit" prefHeight="25.0" prefWidth="116.0" promptText="CodeProduit" />
+                                                                  <JFXDatePicker fx:id="dateSup" defaultColor="#ffab00" onKeyPressed="#handle_dateSup" prefHeight="25.0" prefWidth="197.0" promptText="Date supérieure" GridPane.columnIndex="2" />
+                                                                  <JFXDatePicker fx:id="dateInf" defaultColor="#ffab00" onKeyPressed="#handle_dateInf" prefHeight="25.0" prefWidth="194.0" promptText="Date inférieure" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <JFXTextField fx:id="searchFactureTextField" focusColor="#ffab00" promptText="Recherche" GridPane.columnIndex="3">
+                                                                     <font>
+                                                                        <Font name="Cambria Bold Italic" size="14.0" />
+                                                                     </font>
+                                                                  </JFXTextField>
+                                                                  <ImageView fitHeight="31.0" fitWidth="33.0" GridPane.columnIndex="4">
+                                                                     <image>
+                                                                        <Image url="@icons8-chercher-48.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane prefHeight="328.0" prefWidth="900.0">
+                                                         <children>
+                                                            <JFXTreeTableView fx:id="tableViewFacture" layoutX="196.0" layoutY="-88.0" onMouseClicked="#handleSelectedItem" prefHeight="312.0" prefWidth="774.0" stylesheets="@styleTreeTableview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <columns>
+                                                                  <TreeTableColumn fx:id="idFacture" prefWidth="75.0" text="idFacture" />
+                                                                  <TreeTableColumn fx:id="dateFacture" prefWidth="75.0" text="dateFacture" />
+                                                                  <TreeTableColumn fx:id="codePaiement" prefWidth="75.0" text="code paiement" />
+                                                                  <TreeTableColumn fx:id="remise" prefWidth="75.0" text="remise" />
+                                                                  <TreeTableColumn fx:id="montant" prefWidth="75.0" text="montant" />
+                                                                  <TreeTableColumn fx:id="modePaiement" prefWidth="75.0" text="mode paiement" />
+                                                                  <TreeTableColumn fx:id="idCaissiere" prefWidth="75.0" text="Caissiere" />
+                                                                  <TreeTableColumn fx:id="idClient_2" prefWidth="75.0" text="idClient" />
+                                                                  <TreeTableColumn fx:id="idCommande" prefWidth="75.0" text="idCommande" />
+                                                                  <TreeTableColumn fx:id="quantite" prefWidth="75.0" text="Quantité du produit" />
+                                                               </columns>
+                                                               <columnResizePolicy>
+                                                                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                               </columnResizePolicy>
+                                                            </JFXTreeTableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane prefHeight="105.0" prefWidth="900.0">
+                                                         <children>
+                                                            <GridPane alignment="TOP_CENTER" layoutY="-20.0" prefHeight="77.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-20.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="445.0" minWidth="10.0" prefWidth="445.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="10.0" prefWidth="152.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <JFXTextField fx:id="recette" editable="false" focusColor="#ffab00" labelFloat="true" prefHeight="25.0" prefWidth="326.0" promptText="Recettes" unFocusColor="#ffab00" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                                                     <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                     </font>
+                                                                  </JFXTextField>
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </HBox>
+         </center>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <top>
+            <HBox prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: #ffab00;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="79.0" opacity="0.9" preserveRatio="true">
+                           <image>
+                              <Image url="@name.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="173.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="79.0" text="Caissier">
+                                 <font>
+                                    <Font name="Georgia Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="user_name" alignment="CENTER" prefHeight="42.0" prefWidth="169.0" text="User name">
+                                 <font>
+                                    <Font name="Georgia Bold Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="103.0" prefWidth="855.0">
+                     <children>
+                        <JFXButton fx:id="Deconnexion" alignment="CENTER" contentDisplay="RIGHT" onAction="#handleDeconnexionButton" prefHeight="63.0" prefWidth="221.0" text="Déconnexion" underline="true" wrapText="true">
+                           <graphic>
+                              <ImageView fitHeight="51.0" fitWidth="96.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons8-flèche-droite-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Georgia Bold Italic" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

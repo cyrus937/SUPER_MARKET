@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="700.0" style="-fx-background-color: white; -fx-background-color: linear-gradient(to top, #ffab00, white);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ChargementController">
+   <children>
+      <Label layoutX="249.0" prefHeight="124.0" prefWidth="202.0" text="eShop" textFill="#ffab00">
+         <font>
+            <Font name="Edwardian Script ITC" size="100.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <ProgressIndicator fx:id="progrssIndicator" layoutX="242.0" layoutY="148.0" prefHeight="154.0" prefWidth="202.0" progress="0.0" stylesheets="@Anchorpane.css" />
+      <Circle fill="#ffab00" layoutX="343.0" layoutY="217.0" radius="58.0" stroke="#ffab00" strokeType="INSIDE" />
+      <Circle fill="WHITE" layoutX="343.0" layoutY="217.0" radius="50.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="202.0" prefHeight="30.0" prefWidth="80.0" text="Label" textFill="#ffab00">
+         <font>
+            <Font name="LCD" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="label1" alignment="CENTER" layoutX="72.0" layoutY="302.0" prefHeight="22.0" prefWidth="556.0" text="Label" textFill="#055df7">
+         <font>
+            <Font name="Georgia" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

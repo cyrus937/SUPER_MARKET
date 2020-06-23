@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AdminFournisseurController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <HBox prefHeight="63.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #ffab00;">
+                     <children>
+                        <ImageView fitHeight="53.0" fitWidth="79.0">
+                           <image>
+                              <Image url="@name.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="55.0" prefWidth="181.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="28.0" prefWidth="194.0" text="Administrateur">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="label" alignment="TOP_CENTER" prefHeight="28.0" prefWidth="184.0" text="Administrateur">
+                                       <font>
+                                          <Font name="Cambria Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="103.0" prefWidth="855.0" style="-fx-background-color: #ffab00;">
+                     <children>
+                        <JFXButton fx:id="deconnexion" alignment="TOP_LEFT" contentDisplay="CENTER" focusTraversable="false" onAction="#handleDeconnexionButton" prefHeight="55.0" prefWidth="163.0" style="-fx-background-color: #ffab00;" text="Déconnexion" underline="true">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="52.0" translateX="75.0">
+                                 <image>
+                                    <Image url="@icons8-flèche-droite-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <HBox prefHeight="79.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="79.0" prefWidth="534.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXButton fx:id="ajout" alignment="CENTER" buttonType="RAISED" contentDisplay="RIGHT" focusTraversable="false" onAction="#handleAddFournisseurButton" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: transparent;" text="Ajouter Fournisseur" underline="true">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0">
+                                       <image>
+                                          <Image url="@icons8-plus-16.png" />
+                                       </image>
+                                       <effect>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant color="BLACK" />
+                                             </light>
+                                          </Lighting>
+                                       </effect>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Cambria Bold" size="16.0" />
+                                 </font>
+                              </JFXButton>
+                           </children></HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="79.0" prefWidth="422.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXTextField fx:id="search" alignment="CENTER" focusColor="BLACK" labelFloat="true" prefHeight="25.0" prefWidth="195.0" promptText="Recherche">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label prefHeight="48.0" prefWidth="46.0" text=" ">
+                                 <graphic>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@icons8-chercher-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </top>
+               <bottom>
+                  <HBox prefHeight="3.0" prefWidth="900.0" BorderPane.alignment="BOTTOM_CENTER" />
+               </bottom>
+               <center>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXTreeTableView fx:id="treetableview" editable="true" prefHeight="386.0" prefWidth="754.0" stylesheets="@styleTreeTableview.css" HBox.hgrow="ALWAYS">
+                                 <columnResizePolicy>
+                                    <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <columns>
+                                    <TreeTableColumn fx:id="identifiant" prefWidth="75.0" text="Identifiant" />
+                                    <TreeTableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
+                                    <TreeTableColumn fx:id="adresse" prefWidth="75.0" text="Adresse" />
+                                    <TreeTableColumn fx:id="tel" prefWidth="75.0" text="Téléphone" />
+                                 </columns>
+                              </JFXTreeTableView>
+                           </children>
+                        </HBox>
+                     </center>
+                     <right>
+                        <VBox alignment="CENTER_RIGHT" focusTraversable="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER_RIGHT" />
+                     </right>
+                     <left>
+                        <VBox alignment="CENTER_LEFT" focusTraversable="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER_LEFT" />
+                     </left>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <HBox prefHeight="52.0" prefWidth="900.0">
+               <children>
+                  <HBox prefHeight="52.0" prefWidth="351.0" />
+                  <HBox alignment="CENTER" prefHeight="52.0" prefWidth="183.0" HBox.hgrow="ALWAYS" />
+                  <HBox prefHeight="52.0" prefWidth="195.0" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>
